@@ -1,0 +1,35 @@
+.form>ul{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+    padding: 0px;
+}
+.form>ul>li {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+.form>ul>li>span {
+    width: 64px;
+}
+.form>ul>li>textarea {
+    border: 2px black solid;
+    flex: 1;
+    min-width: 0;
+    min-height: 20px;
+}
+.form>ul>li>textarea.question_text_box {
+    height: 400px;
+    resize: vertical;
+    padding: 8px;
+}
+.form>ul>li>button {
+    border: 2px black solid;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.25s ease-out;
+}
+.form>ul>li>button:hover {
+    background-color: rgb(217, 252, 252);
+}
