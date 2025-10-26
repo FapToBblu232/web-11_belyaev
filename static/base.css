@@ -1,0 +1,87 @@
+
+body {
+    margin: 16px;
+}
+a {
+    transition: color 0.12s ease-out;
+}
+a:hover {
+    color: blueviolet !important;
+}
+header {
+    display: flex;
+    align-items: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    gap: 48px;
+}
+input.search {
+    flex: 1;
+    min-width: 0;
+    margin: auto;
+}
+.profile {
+    width: 150px;
+    flex-shrink: 0;
+    display: flex;
+    gap: 16px;
+}
+.avatar {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+.question-avatar {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+header>button.ask {
+    color: aliceblue;
+    background-color: green;
+    cursor: pointer;
+    timeline-scope: 1s;
+}
+
+.smth_cool {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, transparent, black, transparent);
+    margin: 8px 0;
+}
+
+.root {
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+}
+aside {
+    width: 150px;
+    flex-shrink: 0;
+}
+ul.popular_tags_list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 0px;
+}
+ul.best_members-list {
+    list-style: none;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.verison {
+    
+}

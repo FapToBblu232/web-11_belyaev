@@ -1,0 +1,64 @@
+.main_head {
+    display: flex;
+    gap: 8px;
+}
+ul.form {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0px;
+    padding: 0px;
+}
+ul>li {
+    display: flex;
+}
+ul>li>span {
+    width: 172px;
+}
+ul>li>input {
+    width: 256px;
+}
+.avatar_form {
+    display: flex;
+}
+.path {
+    display: flex;
+    gap: 8px;
+    width: 264px;
+}
+.choose {
+    background-color: white;
+    cursor: pointer;
+    width: 64px;
+    flex-shrink: 0;
+}
+.avatar_form>div{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.path>input {
+    flex: 1;
+    min-width: 0; 
+}
+.save_button {
+    cursor: pointer;
+    background-color: white;
+}
+.form>li>button:hover {
+    background-color: rgb(217, 252, 252);
+}
+.choose:hover {
+    background-color: rgb(217, 252, 252);
+}
+li>input {
+    border: 2px black solid;
+}
+li>div>div>input {
+    border: 2px black solid;
+}
+.register_button {
+    cursor: pointer;
+    background-color: white;
+}

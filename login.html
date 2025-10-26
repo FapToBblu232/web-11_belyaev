@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question project log in</title>
+
+    <link rel="stylesheet" href="static/base.css">
+    <link rel="stylesheet" href="static/login.css">
+</head>
+
+<body>
+    <header>
+        <h3>
+            <a href="index.html">AskPupkin</a>
+        </h3>
+        <input type="text" class="search" placeholder="Search">
+        <button class="ask">Ask</button>
+        <div class="profile">
+            <a href="#">log in</a>
+            <a href="register.html">register</a>
+        </div>
+    </header>
+
+    <hr class="smth_cool">
+
+    <div class="root">
+        <main>
+            <section class="main_head">
+                <h3>Log In</h3>
+            </section>
+            <section class="alarm">
+                <span style="color: red;">Sorry, wrong password!</span>
+            </section>
+            <section class="input">
+                <form class="login-form" method="post" action="/api/login">
+                    <ul class="form">
+                        <li>
+                            <span>Login</span>
+                            <input type="text" name="username" placeholder="Enter your login" required>
+                        </li>
+                        <li>
+                            <span>Password</span>
+                            <input type="password" name="password" placeholder="Enter your password" required>
+                        </li>
+                        <li>
+                            <span></span>
+                            <button type="submit" class="log_in_button">Log in!</button>
+                        </li>
+                        <li>
+                            <span></span>
+                            <a href="register.html">create new account</a>
+                        </li>
+                    </ul>
+                </form>
+            </section>
+        </main>
+    
+        <aside>
+            <section class="popular_tags">
+                <h3>Popular Tags</h3>
+                <ul class="popular_tags_list">
+                    <li>
+                        <a href="#">perl</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color: red;">python</a>
+                    </li>
+                    <li>
+                        <a href="#">TechnoPark</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color: red;">MySQL</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color: green;">django</a>
+                    </li>
+                    <li>
+                        <a href="#">Mail.Ru</a>
+                    </li>
+                    <li>
+                        <a href="#">Voloshin</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color: orange;">Firefox</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="best_members">
+                <h3>Best Members</h3>
+                <ul class="best_members-list">
+                    <li>
+                        <a href="#">Mr. Freeman</a>
+                    </li>
+                    <li>
+                        <a href="#">Dr. House</a>
+                    </li>
+                    <li>
+                        <a href="#">Bender</a>
+                    </li>
+                    <li>
+                        <a href="#">Queen Victoria</a>
+                    </li>
+                    <li>
+                        <a href="#">V. Pupkin</a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+    </div>
+    <footer>
+        <hr class="smth_cool">
+        <span class="version">Project vertion is 1.1</span>
+    </footer>
+</body>
+</html>
