@@ -3,8 +3,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" root="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question project new question</title>
 
     <link rel="stylesheet" href="static/base.css">
     <link rel="stylesheet" href="static/new_question.css">
@@ -13,7 +13,7 @@
 <body>
     <header>
         <h3>
-            AskPupkin
+            <a href="index.html">AskPupkin</a>
         </h3>
         <input type="text" class="search" placeholder="Search">
         <button class="ask">Ask</button>
@@ -30,27 +30,37 @@
             <section class="new_question">
                 <h3>New Question</h3>
             </section>
-
-            <section class="form">
-                <ul>
-                    <li>
-                        <span>Title</span>
-                        <textarea placeholder="Title"></textarea>
-                    </li>
-                    <li class="question_text">
-                        <span>Text</span>
-                        <textarea class="question_text_box" placeholder="Question Text"></textarea>
-                    </li>
-                    <li>
-                        <span>Tags</span>
-                        <textarea placeholder="Tags"></textarea>
-                    </li>
-                    <li>
-                        <span></span>
-                        <button class="finale_ask">ASK!</button>
-                    </li>
-                </ul>
-            </section>
+            <form action="/api/question", method="post">
+                <section class="form">
+                    <ul>
+                        <li>
+                            <span>Title</span>
+                            <div>
+                                <input name="title" placeholder="Title" required>
+                                <div class="error-message" data-field="title"></div>
+                            </div>
+                        </li>
+                        <li class="question_text">
+                            <span>Text</span>
+                            <div>
+                                <textarea name="content" class="question_text_box" placeholder="Question Text"></textarea>
+                                <div class="error-message" data-field="title"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <span>Tags</span>
+                            <div>
+                                <input name="tags" placeholder="Tags" required>
+                                <div class="error-message" data-field="title"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <span></span>
+                            <button type="submit" class="finale_ask">ASK!</button>
+                        </li>
+                    </ul>
+                </section>
+            </form>
         </main>
     
         <aside>
@@ -105,6 +115,9 @@
             </section>
         </aside>
     </div>
-
+    <footer>
+        <hr class="smth_cool">
+        <span class="version">Project vertion is 1.1</span>
+    </footer>
 </body>
 </html>

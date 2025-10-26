@@ -7,6 +7,7 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    align-items: center;
 }
 .leftside .likes {
     width: 32px;
@@ -50,4 +51,46 @@ button.no_click {
 }
 .paginator>button.no_click:hover{
     background-color: white;
+}
+
+.likes-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.like-btn, .dislike-btn {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-out;
+}
+
+.like-btn:hover {
+    background: #4CAF50;
+    color: white;
+    border-color: #4CAF50;
+}
+
+.dislike-btn:hover {
+    background: #f44336;
+    color: white;
+    border-color: #f44336;
+}
+
+.likes {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #f9f9f9;
 }

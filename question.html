@@ -3,17 +3,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" root="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question project question</title>
 
     <link rel="stylesheet" href="static/base.css">
     <link rel="stylesheet" href="static/question.css">
+    <link rel="stylesheet" href="static/index.css">
 </head>
 
 <body>
     <header>
         <h3>
-            AskPupkin
+            <a href="index.html">AskPupkin</a>
         </h3>
         <input type="text" class="search" placeholder="Search">
         <button class="ask">Ask</button>
@@ -30,7 +31,11 @@
             <section class="question">
                 <div class="leftside">
                     <img src="images/avatar.jpg" alt="question ava" class="question-avatar">
-                    <input type="number" class="likes" min="0">
+                    <div class="likes-container">
+                        <button type="button" class="dislike-btn">-</button>
+                        <input type="number" class="likes" value="0" readonly>
+                        <button type="button" class="like-btn">+</button>
+                    </div>
                 </div>
                 <div class="info">
                     <h3>How to build a moon park?</h3>
@@ -53,7 +58,11 @@
                 <div class="item">
                     <div class="leftside">
                         <img src="images/avatar.jpg" alt="question ava" class="question-avatar">
-                        <input type="number" class="likes" min="0">
+                        <div class="likes-container">
+                        <button type="button" class="dislike-btn">-</button>
+                        <input type="number" class="likes" value="0" readonly>
+                        <button type="button" class="like-btn">+</button>
+                    </div>
                     </div>
                     <div class="info">
                         <div class="info_text">
@@ -71,7 +80,11 @@
                 <div class="item">
                     <div class="leftside">
                         <img src="images/avatar.jpg" alt="question ava" class="question-avatar">
-                        <input type="number" class="likes" min="0">
+                        <div class="likes-container">
+                        <button type="button" class="dislike-btn">-</button>
+                        <input type="number" class="likes" value="0" readonly>
+                        <button type="button" class="like-btn">+</button>
+                    </div>
                     </div>
                     <div class="info">
                         <div class="info_text">
@@ -88,11 +101,12 @@
             </section>
 
             <hr class="smth_cool">
-
-            <section class="new_answ">
-                <textarea placeholder="Enter your answer here.."></textarea>
-                <button class="answ_button">Answer</button>
-            </section>
+            <form method="post", action="/api/answers">
+                <section class="new_answ">
+                    <textarea name="answer" placeholder="Enter your answer here.."></textarea>
+                    <button type="submit" class="answ_button">Answer</button>
+                </section>
+            </form>
         </main>
     
         <aside>
@@ -147,6 +161,9 @@
             </section>
         </aside>
     </div>
-
+    <footer>
+        <hr class="smth_cool">
+        <span class="version">Project vertion is 1.1</span>
+    </footer>
 </body>
 </html>

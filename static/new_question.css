@@ -13,13 +13,21 @@
 .form>ul>li>span {
     width: 64px;
 }
-.form>ul>li>textarea {
-    border: 2px black solid;
+.form>ul>li>div {
+    display: flex;
     flex: 1;
+    flex-direction: column;
+}
+.form>ul>li>div>textarea,
+.form>ul>li>div>input {
+    border: 2px black solid;
     min-width: 0;
     min-height: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
 }
-.form>ul>li>textarea.question_text_box {
+.form>ul>li>div>textarea.question_text_box {
     height: 400px;
     resize: vertical;
     padding: 8px;

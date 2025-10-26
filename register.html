@@ -3,8 +3,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" root="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question project register</title>
 
     <link rel="stylesheet" href="static/base.css">
     <link rel="stylesheet" href="static/login.css">
@@ -14,17 +14,13 @@
 <body>
     <header>
         <h3>
-            AskPupkin
+            <a href="index.html">AskPupkin</a>
         </h3>
         <input type="text" class="search" placeholder="Search">
         <button class="ask">Ask</button>
         <div class="profile">
-            <img src="images/avatar.jpg" alt="AVA" class="avatar">
-            <div>
-                <div class="name">Dr.Pepper</div>
-                <a href="settings.html" class="settings">settings</a>
-                <a href="#" class="log out">log out</a>
-            </div>
+            <a href="login.html">log in</a>
+            <a href="register.html">register</a>
         </div>
     </header>
 
@@ -33,46 +29,48 @@
     <div class="root">
         <main>
             <section class="main_head">
-                <h3>Settings:</h3>
-                <h3 class="user_name">Dr. Pepper</h3>
+                <h3>Register</h3>
             </section>
-            <section class="input">
-                <ul class="form">
-                    <li>
-                        <span>Login</span>
-                        <input type="text" placeholder="Enter new login">
-                    </li>
-                    <li>
-                        <span>Email</span>
-                        <input type="text" placeholder="Enter new mail">
-                    </li>
-                    <li>
-                        <span>NickName</span>
-                        <input type="text" placeholder="Enter new NickName">
-                    </li>
-                    <li>
-                        <span>Password</span>
-                        <input type="password" placeholder="Enter your password">
-                    </li>
-                    <li>
-                        <span>Repeat password</span>
-                        <input type="password" placeholder="Repeat your password">
-                    </li>
-                    <li class="avatar_form">
-                        <span>Upload Avatar</span>
-                        <div>
-                            <div class="path">
-                                <input type="text" placeholder="Choose the path to img">
-                                <button class="choose">choose</button>
+            <form class="register-form" method="post" action="/api/register">
+                <section class="input">
+                    <ul class="form">
+                        <li>
+                            <span>Login</span>
+                            <input type="text" name="username" placeholder="Enter new login" required>
+                        </li>
+                        <li>
+                            <span>Email</span>
+                            <input type="email" name="email" placeholder="Enter new mail" required>
+                        </li>
+                        <li>
+                            <span>NickName</span>
+                            <input type="text" name="nickname" placeholder="Enter new NickName" required>
+                        </li>
+                        <li>
+                            <span>Password</span>
+                            <input type="password" name="password" placeholder="Enter your password" required>
+                        </li>
+                        <li>
+                            <span>Repeat password</span>
+                            <input type="password" name="password_confirmation" placeholder="Repeat your password" required>
+                        </li>
+                        <li class="avatar_form">
+                            <span>Upload Avatar</span>
+                            <div>
+                                <div class="path">
+                                    <input type="file" name="avatar" id="avatar" accept="image/*" style="display: none;">
+                                    <input type="text" id="file-path" placeholder="No file chosen" readonly>
+                                    <button type="button" class="choose" onclick="document.getElementById('avatar').click()">Choose</button>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                    <li>
-                        <span></span>
-                        <button class="register_button">Register!</button>
-                    </li>
-                </ul>
-            </section>
+                        </li>
+                        <li>
+                            <span></span>
+                            <button type="submit" class="register_button">Register!</button>
+                        </li>
+                    </ul>
+                </section>
+            </form>
         </main>
     
         <aside>
@@ -127,6 +125,9 @@
             </section>
         </aside>
     </div>
-
+    <footer>
+        <hr class="smth_cool">
+        <span class="version">Project vertion is 1.1</span>
+    </footer>
 </body>
 </html>

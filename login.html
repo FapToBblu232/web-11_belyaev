@@ -3,8 +3,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" root="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question project log in</title>
 
     <link rel="stylesheet" href="static/base.css">
     <link rel="stylesheet" href="static/login.css">
@@ -13,7 +13,7 @@
 <body>
     <header>
         <h3>
-            AskPupkin
+            <a href="index.html">AskPupkin</a>
         </h3>
         <input type="text" class="search" placeholder="Search">
         <button class="ask">Ask</button>
@@ -34,24 +34,26 @@
                 <span style="color: red;">Sorry, wrong password!</span>
             </section>
             <section class="input">
-                <ul class="form">
-                    <li>
-                        <span>Login</span>
-                        <input type="text" placeholder="Enter your login">
-                    </li>
-                    <li>
-                        <span>Password</span>
-                        <input type="password" placeholder="Enter your password">
-                    </li>
-                    <li>
-                        <span></span>
-                        <button class="log_in_button">Log in!</button>
-                    </li>
-                    <li>
-                        <span></span>
-                        <a href="register.html">create new account</a>
-                    </li>
-                </ul>
+                <form class="login-form" method="post" action="/api/login">
+                    <ul class="form">
+                        <li>
+                            <span>Login</span>
+                            <input type="text" name="username" placeholder="Enter your login" required>
+                        </li>
+                        <li>
+                            <span>Password</span>
+                            <input type="password" name="password" placeholder="Enter your password" required>
+                        </li>
+                        <li>
+                            <span></span>
+                            <button type="submit" class="log_in_button">Log in!</button>
+                        </li>
+                        <li>
+                            <span></span>
+                            <a href="register.html">create new account</a>
+                        </li>
+                    </ul>
+                </form>
             </section>
         </main>
     
@@ -107,6 +109,9 @@
             </section>
         </aside>
     </div>
-
+    <footer>
+        <hr class="smth_cool">
+        <span class="version">Project vertion is 1.1</span>
+    </footer>
 </body>
 </html>
