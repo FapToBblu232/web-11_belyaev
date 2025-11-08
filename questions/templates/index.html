@@ -1,0 +1,24 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="root">
+        <main>
+            <section class="new_questions">
+                <h3>New Questions</h3>
+                <a href="{% url "hot_view" %}" class="hot_questions">Hot Questions</a>
+            </section>
+            
+            <div class="list">
+                {% for question in question_list %}
+                    {% include "question_card.html" with inst=question %}
+                {% endfor %}
+            </div>
+            
+            {% include "paginator.html" with page_obj=page_obj %}
+        </main>
+        
+        {% include "aside.html" %}
+    </div>
+{% endblock content %}
