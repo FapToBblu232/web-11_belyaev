@@ -1,2 +1,8 @@
 question_project/prod.conf
+*.env
+.env.*
 .venv
+
+.vscode/
+__pycache__/
+*.pyc
