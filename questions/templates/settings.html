@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Настройки
+{% endblock title %}
+
+{% block content %}
+    <div class="root">
+        <main>
+            <section class="main_head">
+                <h3>Settings:</h3>
+                <h3 class="user_name">Dr. Pepper</h3>
+            </section>
+            <section class="input">
+                <ul class="form">
+                    <li>
+                        <span>Login</span>
+                        <input type="text" placeholder="Enter new login">
+                    </li>
+                    <li>
+                        <span>Email</span>
+                        <input type="text" placeholder="Enter new mail">
+                    </li>
+                    <li>
+                        <span>NickName</span>
+                        <input type="text" placeholder="Enter new NickName">
+                    </li>
+                    <li class="avatar_form">
+                        <span>Upload Avatar</span>
+                        <div>
+                            <span>avatar</span>
+                            <div class="path">
+                                <input type="text" placeholder="Choose the path to img">
+                                <button class="choose">choose</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span></span>
+                        <button class="save_button">Save</button>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    
+        {% include "aside.html" %}
+    </div>
+{% endblock content %}
