@@ -1,0 +1,58 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            Главная страница
+        {% endblock title %}
+    </title>
+
+    <link rel="stylesheet" href="{% static 'questions/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'questions/css/question.css' %}">
+    <link rel="stylesheet" href="{% static 'questions/css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'questions/css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'questions/css/new_question.css' %}">
+    <link rel="stylesheet" href="{% static 'questions/css/settings.css' %}">
+</head>
+
+<body>
+    <header>
+        <h3>
+            <a href="{% url "index_question_view" %}">AskPupkin</a>
+        </h3>
+        <input type="text" class="search" placeholder="Search">
+        <button class="ask">Ask</button>
+
+        {% if user.is_authenticated %}
+            <div class="profile">
+                <img src="{% static 'questions/img/avatar.jpg' %}" alt="Dr.Pepper profile avatar" class="avatar">
+                <div>
+                    <div class="name">Dr.Pepper</div>
+                    <a href="{% url "settings_view" %}" class="settings">settings</a>
+                    <a href="#" class="log out">log out</a>
+                </div>
+            </div>
+        {% else %}
+            <div class="profile">
+                <a href="{% url "login_view" %}">log in</a>
+                <a href="{% url "signup_view" %}">register</a>
+            </div>
+        {% endif %}
+    </header>
+
+    <hr class="smth_cool">
+
+    {% block content %}
+    {% endblock content %}
+
+    <footer>
+        <hr class="smth_cool">
+        <span class="version">Project vertion is 1.1</span>
+    </footer>
+</body>
+</html>

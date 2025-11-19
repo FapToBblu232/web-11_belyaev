@@ -1,0 +1,31 @@
+.main_head {
+    display: flex;
+    gap: 8px;
+}
+ul.form {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0px;
+    padding: 0px;
+}
+ul>li {
+    display: flex;
+}
+ul>li>span {
+    width: 172px;
+}
+ul>li>input {
+    width: 256px;
+}
+.log_in_button {
+    cursor: pointer;
+    background-color: white;
+}
+.log_in_button:hover {
+    background-color: rgb(217, 252, 252);
+}
+li>input {
+    border: 2px black solid;
+}

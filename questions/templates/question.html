@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Вопрос номер {{ question.id }}
+{% endblock title %}
+
+{% block content %}
+    <div class="root">
+        <main>
+            <div class="naked_question">
+                {% include "question_card.html" with inst=question %}
+            </div>
+            
+            <hr class="smth_cool">
+
+            <section class="answers">
+                {% for answer in answers %}
+                    {% include "answer_card.html" with inst=answer%}
+                {% endfor %}
+            </section>
+
+            <hr class="smth_cool">
+            <form method="post", action="/api/answers">
+                <section class="new_answ">
+                    <textarea name="answer" placeholder="Enter your answer here.."></textarea>
+                    <button type="submit" class="answ_button">Answer</button>
+                </section>
+            </form>
+        </main>
+    
+        {% include "aside.html" %}
+    </div>
+{% endblock content %}
