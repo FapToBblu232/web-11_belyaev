@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Настройки
+{% endblock title %}
+
+{% block content %}
+<div class="root">
+    <main>
+        <section class="main_head">
+            <h3>Settings:</h3>
+            <h3 class="user_name">{{ request.user.username }}</h3>
+        </section>
+        <section class="input">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <ul class="form">
+                    <li>
+                        <span>Login</span>
+                        <input type="text" placeholder="Enter new login" name="username" value="{{ request.user.username }}">
+                    </li>
+                    <li>
+                        <span>Email</span>
+                        <input type="text" placeholder="Enter new mail" name="email" value="{{ request.user.email }}">
+                    </li>
+                    <li>
+                        <span>NickName</span>
+                        <input type="text" placeholder="Enter new NickName" name="nickname" value="{{ request.user.first_name }}">
+                    </li>
+                    <li class="avatar_form">
+                        <span>Upload Avatar</span>
+                        <div>
+                            <span>avatar</span>
+                            <div class="path">
+                                <input type="file" name="avatar" accept="image/*">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span></span>
+                        <button type="submit" class="save_button">Save</button>
+                    </li>
+                </ul>
+            </form>
+        </section>
+    </main>
+        
+    {% include "aside.html" %}
+</div>
+{% endblock content %}
+        

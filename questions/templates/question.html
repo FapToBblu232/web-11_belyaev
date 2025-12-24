@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Вопрос номер {{ question.id }}
+{% endblock title %}
+
+{% block content %}
+    <div class="root">
+        <main>
+            <div class="naked_question">
+                {% include "question_card.html" with inst=question %}
+            </div>
+            
+            <hr class="smth_cool">
+
+            <section class="answers">
+                {% for answer in answers %}
+                    {% include "answer_card.html" with inst=answer%}
+                {% endfor %}
+            </section>
+
+            <hr class="smth_cool">
+            <form method="post" action="{% url 'question_view' pk=question.id %}">
+            {% csrf_token %}
+            <section class="new_answ">
+                {{ form.non_field_errors }}
+                <textarea name="content" placeholder="Enter your answer here..">{{ form.content.value }}</textarea>
+                {% if form.content.errors %}
+                    <div style="color:red;">
+                        {{ form.content.errors }}
+                    </div>
+                {% endif %}
+                <button type="submit" class="answ_button">Answer</button>
+            </section>
+        </form>
+        </main>
+    
+        {% include "aside.html" %}
+    </div>
+{% endblock content %}

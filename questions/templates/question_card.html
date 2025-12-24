@@ -1,0 +1,26 @@
+{% load static index %}
+<section class="content">
+    <div class="leftside">
+        <img src="{% static 'questions/img/avatar.jpg' %}" alt="question ava {{ inst.id }}" class="question-avatar">
+        <!-- <input type="number" class="likes" min="0"> -->
+        {% include "likes.html" with like=inst %}
+    </div>
+    <div class="info" data-id={{ inst.id }}>
+        
+        <a href="{% url "question_view" inst.id %}" class="info_title">{{ inst.title }}</a>
+        <div class="info_text">
+            {{ inst.content|truncate_str:150 }}
+        </div>
+        <div class="info_footer">
+            <span>answers ({{ inst.num_answers }})</span>
+            <div class="tag">
+                <span>Tags:</span>
+                {% for tag in inst.tags.all %}
+                    <a href="{% url 'tag_view' tag.name %}" class="tag">#{{ tag.name }}</a>
+                {% empty %}
+                    <span class="no-tags">Без тегов</span>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
