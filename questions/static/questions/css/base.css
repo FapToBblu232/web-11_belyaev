@@ -1,0 +1,264 @@
+/* --- Reset & Typography --- */
+body {
+    margin: 0;
+    padding: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.2s ease-out;
+}
+
+a:hover {
+    color: blueviolet;
+}
+
+/* --- Header --- */
+header {
+    display: flex;
+    align-items: center;
+    max-width: 1500px;
+    margin: 0 auto 24px;
+    gap: 24px;
+    padding: 12px;
+    background: linear-gradient(to right, #ffffff, #f0f0f0);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+header h3 a {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+input.search {
+    flex: 1;
+    min-width: 0;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input.search:focus {
+    border-color: blueviolet;
+    box-shadow: 0 0 5px rgba(138, 43, 226, 0.3);
+}
+
+button.ask {
+    color: #fff;
+    background-color: green;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+button.ask:hover {
+    background-color: darkgreen;
+}
+
+/* --- Profile --- */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile>div {
+    display: flex;
+    flex-direction: column;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+}
+
+/* Logout form button */
+form button.logout {
+    background: none;
+    border: none;
+    color: #555;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+}
+
+form button.logout:hover {
+    color: red;
+}
+
+/* --- Root layout --- */
+.root {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+    min-width: 0;
+}
+
+/* --- Aside --- */
+aside {
+    width: 200px;
+    flex-shrink: 0;
+}
+
+/* --- Horizontal separator --- */
+.smth_cool {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, transparent, black, transparent);
+    margin: 16px 0;
+}
+
+/* --- Forms --- */
+ul.form {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.form li {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+ul.form li span {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+ul.form input[type="text"],
+ul.form input[type="email"],
+ul.form input[type="password"],
+ul.form textarea {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    width: 100%;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+ul.form input:focus,
+ul.form textarea:focus {
+    border-color: blueviolet;
+    box-shadow: 0 0 5px rgba(138, 43, 226, 0.3);
+}
+
+ul.form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Buttons */
+button.log_in_button,
+button.register_button,
+button.answ_button,
+button.choose,
+button.save_button {
+    background-color: blueviolet;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button.log_in_button:hover,
+button.register_button:hover,
+button.answ_button:hover,
+button.choose:hover,
+button.save_button:hover {
+    background-color: darkviolet;
+}
+
+/* --- Lists --- */
+ul.popular_tags_list,
+ul.best_members-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.popular_tags_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+ul.best_members-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* --- Pagination --- */
+.pagination ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+}
+
+.pagination li a {
+    text-decoration: none;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+    transition: background-color 0.2s;
+}
+
+.pagination li a:hover {
+    background-color: #f2f2f2;
+}
+
+.pagination__info {
+    font-weight: bold;
+    padding: 0 10px;
+    color: #555;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 12px;
+    margin-top: 32px;
+    background: linear-gradient(to right, #f0f0f0, #ffffff);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    color: #555;
+    font-size: 0.9rem;
+}

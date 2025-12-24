@@ -1,0 +1,20 @@
+{% load static index %}
+<div class="item">
+    <div class="leftside">
+        <img src="{% static 'questions/img/avatar.jpg' %}" alt="answer ava {{ inst.id }}" class="answer-avatar">
+        {% include "likes.html" with like=inst type="answer" %}
+    </div>
+    <div class="info">
+        <div class="info_text">
+            {{ inst.content|truncate_str:150 }}
+        </div>
+        <div class="info_footer">
+            <div class="correct">
+                <input type="checkbox" class="mark-correct" data-id="{{ inst.id }}"
+                    {% if inst.is_correct %}checked{% endif %}
+                    {% if request.user != inst.question.author %}disabled{% endif %}>
+                <span>Correct?</span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="root">
+        <main>
+            <section class="new_questions">
+                <h3>New Questions</h3>
+                <a href="{% url "hot_view" %}" class="hot_questions">Hot Questions</a>
+            </section>
+            
+            <div class="list">
+                {% for question in question_list %}
+                    {% include "question_card.html" with inst=question %}
+                {% endfor %}
+            </div>
+            
+            {% include "paginator.html" with page_obj=page_obj %}
+        </main>
+        
+        {% include "aside.html" %}
+    </div>
+
+<script>
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        document.cookie.split(';').forEach(c => {
+            const cookie = c.trim();
+            if (cookie.startsWith(name + '=')) {
+                cookieValue = decodeURIComponent(cookie.slice(name.length + 1));
+            }
+        });
+    }
+    return cookieValue;
+}
+const csrftoken = getCookie('csrftoken');
+
+document.querySelectorAll('.likes-container').forEach(container => {
+    const id = container.dataset.id;
+    const type = container.dataset.type;
+
+    container.querySelector('.like-btn').addEventListener('click', () => {
+        react(id, type, true, container);
+    });
+    container.querySelector('.dislike-btn').addEventListener('click', () => {
+        react(id, type, false, container);
+    });
+});
+
+function react(id, type, is_like, container) {
+    fetch(`/${type}/${id}/react/`, {
+        method: 'POST',
+        headers: {'X-CSRFToken': csrftoken, 'Content-Type': 'application/json'},
+        body: JSON.stringify({is_like})
+    })
+    .then(res => res.json())
+    .then(data => {
+        container.querySelector('.likes-count').value = data.likes_count;
+        container.querySelector('.dislikes-count').value = data.dislikes_count;
+        
+        const likeBtn = container.querySelector('.like-btn');
+        const dislikeBtn = container.querySelector('.dislike-btn');
+        likeBtn.classList.toggle('active', data.user_reaction === 'like');
+        dislikeBtn.classList.toggle('active', data.user_reaction === 'dislike');
+    });
+}
+</script>
+{% endblock content %}
