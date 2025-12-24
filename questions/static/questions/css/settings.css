@@ -1,0 +1,86 @@
+.main_head {
+    display: flex;
+    gap: 8px;
+}
+ul.form {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0px;
+    padding: 0px;
+}
+ul>li {
+    display: flex;
+}
+ul>li>span {
+    width: 172px;
+}
+ul>li>input {
+    width: 256px;
+}
+.avatar_form {
+    display: flex;
+}
+.path {
+    display: flex;
+    gap: 8px;
+    width: 264px;
+}
+.choose {
+    background-color: white;
+    cursor: pointer;
+    width: 64px;
+    flex-shrink: 0;
+}
+.avatar_form>div{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.path {
+    display: flex;
+    align-items: center;   /* выравнивание по вертикали */
+    gap: 8px;              /* расстояние между кнопкой и полем */
+}
+
+.path input[type="text"] {
+    flex: 1;               /* текстовое поле занимает всё доступное место */
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.path button.choose {
+    padding: 6px;
+    border: none;
+    border-radius: 4px;
+    background-color: blueviolet;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.path button.choose:hover {
+    background-color: darkviolet;
+}
+.save_button {
+    cursor: pointer;
+    background-color: white;
+}
+.form>li>button:hover {
+    background-color: rgb(217, 252, 252);
+}
+.choose:hover {
+    background-color: rgb(217, 252, 252);
+}
+li>input {
+    border: 2px black solid;
+}
+li>div>div>input {
+    border: 2px black solid;
+}
+.register_button {
+    cursor: pointer;
+    background-color: white;
+}

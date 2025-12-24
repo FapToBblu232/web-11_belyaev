@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Новый вопрос
+{% endblock title %}
+
+{% block content %}
+<div class="root">
+    <main>
+        <section class="new_question">
+            <h3>New Question</h3>
+        </section>
+        <form action="{% url 'ask_view' %}" method="post">
+            {% csrf_token %}
+            <section class="form">
+                <ul>
+                    <li>
+                        <span>Title</span>
+                        <div>
+                            {{ form.title }}
+                            {% if form.title.errors %}
+                                <div class="error-message">
+                                    {{ form.title.errors|striptags }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </li>
+                    <li class="question_text">
+                        <span>Text</span>
+                        <div>
+                            {{ form.content }}
+                            {% if form.content.errors %}
+                                <div class="error-message">
+                                    {{ form.content.errors|striptags }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </li>
+                    <li>
+                        <span>Tags</span>
+                        <div>
+                            {{ form.tags }}
+                            {% if form.tags.errors %}
+                                <div class="error-message">
+                                    {{ form.tags.errors|striptags }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </li>
+                    <li>
+                        <span></span>
+                        <button type="submit" class="finale_ask">ASK!</button>
+                    </li>
+                </ul>
+            </section>
+        </form>
+    </main>
+    {% include "aside.html" %}
+</div>
+{% endblock content %}

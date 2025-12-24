@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Настройки
+{% endblock title %}
+
+{% block content %}
+<div class="root">
+    <main>
+        <section class="main_head">
+            <h3>Settings:</h3>
+            <h3 class="user_name">{{ request.user.username }}</h3>
+        </section>
+
+        {% if form.non_field_errors %}
+            <section class="alarm">
+                {% for error in form.non_field_errors %}
+                    <span style="color:red;">{{ error }}</span>
+                {% endfor %}
+            </section>
+        {% endif %}
+
+        <form class="settings-form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <ul class="form">
+                <li>
+                    <span>Login</span>
+                    <input type="text" name="username" 
+                           value="{{ request.user.username }}" required>
+                </li>
+                <li>
+                    <span>Email</span>
+                    <input type="email" name="email" 
+                           value="{{ request.user.email }}" required>
+                </li>
+                <li>
+                    <span>NickName</span>
+                    <input type="text" name="nickname" 
+                           value="{{ profile.nickname }}" required>
+                    {% for error in form.nickname.errors %}
+                        <div style="color:red;">{{ error }}</div>
+                    {% endfor %}
+                </li>
+                <li class="avatar_form">
+                    <span>Upload Avatar</span>
+                    <div>
+                        {% if profile.avatar %}
+                            <img src="{{ profile.avatar.url }}" alt="Avatar" 
+                                 style="width:100px; height:100px; object-fit:cover; margin-bottom:8px;">
+                        {% endif %}
+                        <div class="path">
+                            <input type="file" name="avatar" id="avatar" accept="image/*" style="display:none;">
+                            <input type="text" id="file-path" placeholder="No file chosen" readonly>
+                            <button type="button" class="choose" onclick="document.getElementById('avatar').click()">Choose</button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span></span>
+                    <button type="submit" class="save_button">Save</button>
+                </li>
+            </ul>
+        </form>
+    </main>
+        
+    {% include "aside.html" %}
+</div>
+
+<script>
+document.getElementById('avatar').addEventListener('change', function() {
+    const fileName = this.files.length ? this.files[0].name : '';
+    document.getElementById('file-path').value = fileName;
+});
+</script>
+{% endblock content %}

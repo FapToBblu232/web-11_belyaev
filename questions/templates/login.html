@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Вход
+{% endblock title %}
+
+{% block content %}
+<div class="root">
+    <main>
+        <section class="main_head">
+            <h3>Log In</h3>
+        </section>
+        {% if form.non_field_errors %}
+            <section class="alarm">
+                {% for error in form.non_field_errors %}
+                    <span style="color:red;">{{ error }}</span>
+                {% endfor %}
+            </section>
+        {% endif %}
+
+        <section class="input">
+            <form class="login-form" method="post" action="{% url 'login_view' %}">
+                {% csrf_token %}
+                <ul class="form">
+                    <li>
+                        <span>Login</span>
+                        <input type="text" name="username" placeholder="Enter your login"
+                               value="{{ form.username.value|default_if_none:'' }}" required>
+                        {% for error in form.username.errors %}
+                            <div style="color:red;">{{ error }}</div>
+                        {% endfor %}
+                    </li>
+                    <li>
+                        <span>Password</span>
+                        <input type="password" name="password" placeholder="Enter your password" required>
+                        {% for error in form.password.errors %}
+                            <div style="color:red;">{{ error }}</div>
+                        {% endfor %}
+                    </li>
+                    <li>
+                        <span></span>
+                        <button type="submit" class="log_in_button">Log in!</button>
+                    </li>
+                    <li>
+                        <span></span>
+                        <a href="{% url 'signup_view' %}">create new account</a>
+                    </li>
+                </ul>
+            </form>
+        </section>
+    </main>
+
+    {% include "aside.html" %}
+</div>
+{% endblock content %}
