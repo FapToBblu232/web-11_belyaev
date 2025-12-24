@@ -1,0 +1,28 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Вопросы по тегу "{{ tag }}"
+{% endblock title %}
+
+{% block content %}
+    <div class="root">
+        <main>
+            <section class="new_questions">
+                <h3>Tag:</h3>
+                <h3 class="tag_name">{{ tag }}</h3>
+            </section>
+
+            <div class="list">
+                {% for question in question_list %}
+                    {% include "question_card.html" with inst=question %}
+                {% endfor %}
+            </div>
+
+            {% include "paginator.html" with page_obj=page_obj %}
+        </main>
+    
+        {% include "aside.html" %}
+    </div>
+{% endblock content %}
